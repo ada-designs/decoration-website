@@ -1,9 +1,9 @@
 import WeddingSct from "@/components/Wedding/WeddingSct.js";
-import useIsTabletAndMobile from "@/hooks/useIsMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 import Layout from "@/components/Layout";
 
 export default function Wedding({ openMobileMenu }) {
-  const isMobile = useIsTabletAndMobile();
+  const isMobile = useIsMobile();
   return (
     <>
       <Layout>

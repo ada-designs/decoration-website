@@ -1,4 +1,4 @@
-import useIsTabletAndMobile from "@/hooks/useIsMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 import { useRouter } from "next/router";
 import DesktopHeader from "./Headers/DesktopHeader";
 import MobileHeader from "./Headers/MobileHeader";
@@ -13,7 +13,7 @@ import SecondaryMobileHeader from "./Headers/2MobileHeader";
 import { useState } from "react";
 
 export default function Layout({ children }) {
-  const isMobile = useIsTabletAndMobile();
+  const isMobile = useIsMobile();
   const router = useRouter();
 
   /* Mobile menu popup*/

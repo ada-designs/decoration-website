@@ -23,7 +23,6 @@ export default function Layout({ children }) {
   const isHomePage = router.pathname === "/";
   const isServicesPage = router.pathname === "/services";
 
-  const showSecondaryHeader = isServicesPage;
   const showPrimaryHeader = !isServicesPage;
 
   const openMobileMenu = () => setMobileMenuOpen(true);

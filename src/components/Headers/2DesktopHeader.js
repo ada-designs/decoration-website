@@ -2,14 +2,13 @@ import Link from "next/link";
 import styles from "./2Header.module.css";
 import Button from "../Button";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 export default function SecondaryHeader({ openCta }) {
   return (
     <header className={styles.headerSecondary}>
       <ul>
         <li>
-          <a href="#about">За мен</a>
+          <Link href={{ pathname: "/", hash: "about" }}>За мен</Link>
         </li>
         <li>
           <Link href="/Services">Услуги</Link>

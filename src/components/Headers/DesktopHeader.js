@@ -8,7 +8,7 @@ export default function Header({ isCta, openCta }) {
     <header className={styles.headerMain}>
       <ul>
         <li>
-          <a href="#about">За мен</a>
+          <Link href={{ pathname: "/", hash: "about" }}>За мен</Link>
         </li>
         <li>
           <Link href="/services">Услуги</Link>

@@ -15,27 +15,25 @@ import { useState } from "react";
 export default function Layout({ children }) {
   const isMobile = useIsMobile();
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isCta, setIsCta] = useState(false);
 
   /* Mobile menu popup*/
-  const [isOpen, setIsOpen] = useState(false);
-  function openMobileMenu() {
+  function handleOpenMobileMenu() {
     setIsOpen(true);
   }
 
-  function closeMobileMenu() {
+  function handleCloseMobileMenu() {
     setIsOpen(false);
   }
 
-  /* CTA popup*/
-
-  const [isCta, setIsCta] = useState(true);
-
-  function openCta() {
+  /* CTA popup */
+  function handleOpenCta() {
     if (isOpen) setIsOpen(false);
     setIsCta(true);
   }
 
-  function closeCta() {
+  function handleCloseCta() {
     setIsCta(false);
   }
 
@@ -46,26 +44,26 @@ export default function Layout({ children }) {
 
   return (
     <>
-      {!isMobile && !isServicesPage && <DesktopHeader openCta={openCta} />}
+      {!isMobile && !isServicesPage && <DesktopHeader openCta={handleOpenCta} />}
 
       {isMobile && !isServicesPage && (
-        <MobileHeader openMobileMenu={openMobileMenu} />
+        <MobileHeader openMobileMenu={handleOpenMobileMenu} />
       )}
 
-      {!isMobile && isServicesPage && <SecondaryHeader openCta={openCta} />}
+      {!isMobile && isServicesPage && <SecondaryHeader openCta={handleOpenCta} />}
 
       {isMobile && isServicesPage && (
-        <SecondaryMobileHeader openMobileMenu={openMobileMenu} />
+        <SecondaryMobileHeader openMobileMenu={handleOpenMobileMenu} />
       )}
 
       {isMobile && (
-        <PopupMobileMenu isOpen={isOpen} closeMobileMenu={closeMobileMenu} />
+        <PopupMobileMenu isOpen={isOpen} closeMobileMenu={handleCloseMobileMenu} />
       )}
       {!isMobile && (
-        <DesktopPopup isCta={isCta} openCta={openCta} closeCta={closeCta} />
+        <DesktopPopup isCta={isCta} openCta={handleOpenCta} closeCta={handleCloseCta} />
       )}
       {isMobile && (
-        <MobilePopup isCta={isCta} openCta={openCta} closeCta={closeCta} />
+        <MobilePopup isCta={isCta} openCta={handleOpenCta} closeCta={handleCloseCta} />
       )}
 
       <main>{children}</main>

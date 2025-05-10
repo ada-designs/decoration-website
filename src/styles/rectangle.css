@@ -1,0 +1,37 @@
+.rectangleCenter {
+  border: 1px solid white;
+  border-radius: 100px;
+  height: 120px;
+  width: 90px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+}
+
+.rectangleTop {
+  border: 1px solid white;
+  border-radius: 100px;
+  height: 120px;
+  width: 90px;
+  position: absolute;
+  left: 50%;
+  top: -10%;
+  transform: translateX(-50%);
+}
+
+.rectangleBottom {
+  border: 1px solid white;
+  border-radius: 100px;
+  height: 120px;
+  width: 90px;
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  transform: translateX(-50%);
+}
+
+.rectangleWrapper {
+  position: relative;
+  z-index: 10; /* Ensure it's on top of content below */
+}

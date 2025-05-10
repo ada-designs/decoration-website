@@ -1,0 +1,214 @@
+/* --------------------- HERO ---------------------- */
+
+.heroCont {
+  background-image: url("/home.jpg");
+  background-size: cover;
+  background-position: 50% 0%;
+  height: 140vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+
+  position: relative;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0),
+    rgba(231, 94, 3, 0.144),
+    rgba(231, 94, 3, 0.329)
+  );
+}
+
+/* --------------------- ORANGE ARC ---------------------- */
+
+.orangeArc {
+  width: 100vw; /* Full width of the screen */
+  background: linear-gradient(to right, #ad0f0c, #d24900, #db6a02, #dc7406);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  margin-top: -20%;
+  border-radius: 100% / 40%;
+  max-width: 100%;
+  padding: 7% 0;
+}
+
+.whiteArc {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+  border-radius: 100% / 40%;
+  max-width: 100%;
+  width: 110%;
+
+  padding: 5% 0 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.whiteArcFirst {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+}
+
+.whiteArc h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 0.7; /* Adjust line height to reduce space */
+}
+
+.whiteArcSecond {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+
+.whiteArcSecondText {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.whiteArcSecondText h2 {
+  color: white;
+  font-size: 4rem;
+}
+
+.signature {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.795);
+  font-weight: 200;
+  font-style: italic;
+}
+.whiteArcSecond img {
+  height: 700px;
+  object-fit: cover;
+  margin-right: -15%;
+  margin-top: -15%;
+  border: solid 20px white;
+  transform: rotate(-5deg);
+}
+
+.whiteArcFirst p {
+  color: white;
+  text-align: center;
+  width: 75%;
+  font-weight: 300;
+}
+
+.whiteArcSecond p {
+  color: white;
+  text-align: left;
+  width: 75%;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .heroCont {
+    height: 80vh;
+  }
+
+  .orangeArc {
+    margin-top: -35%;
+    border-radius: 100% / 20%;
+  }
+
+  .whiteArc {
+    padding: 15% 0 15%;
+    border-radius: 100% / 20%;
+  }
+
+  .whiteArcSecond {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 4rem;
+    margin-top: 10%;
+  }
+
+  .whiteArcSecond img {
+    height: 600px;
+    width: 500px;
+    margin-left: -15%;
+  }
+
+  .whiteArcSecondText {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .word1 {
+    font-size: 5rem;
+  }
+
+  .signature {
+    font-size: 1.5rem;
+  }
+
+  .whiteArc h2 {
+    font-size: 2rem;
+  }
+
+  .heroCont {
+    height: 70vh;
+  }
+
+  .orangeArc {
+    margin-top: -35%;
+    border-radius: 100% / 10%;
+  }
+
+  .whiteArc {
+    padding: 10% 0 15%;
+    border-radius: 100% / 10%;
+  }
+
+  .whiteArcSecond {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 4rem;
+  }
+
+  .whiteArcSecond img {
+    height: 400px;
+    width: 300px;
+    margin-left: -15%;
+  }
+
+  .whiteArcSecondText {
+    text-align: center;
+    align-items: center;
+  }
+}

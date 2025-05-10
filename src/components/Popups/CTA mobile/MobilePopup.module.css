@@ -1,0 +1,153 @@
+.wrapper {
+  position: fixed;
+  height: 110%;
+  width: 100%;
+  background: var(--orange-fade);
+  z-index: 100;
+  opacity: 0.45;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 2%;
+  bottom: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row-reverse;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: orangered;
+
+  cursor: pointer;
+}
+
+.cta {
+  background-color: white;
+  z-index: 101;
+  position: fixed;
+  height: 90vh;
+  width: 90vw;
+  top: 5%;
+  left: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0% 0% 10%;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.offScreenLogo {
+  width: 150px;
+}
+
+.orangeArc {
+  background: var(--orange-fade);
+  width: 100%;
+  height: 20%;
+  border-radius: 50px 50px 0 0;
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  clip-path: ellipse(60% 100% at 50% 00%);
+}
+
+.orangeArc span {
+  position: absolute;
+  left: 4%;
+  top: 7%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.whiteSpace {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 90%;
+  padding-top: 50px;
+  height: 70%;
+}
+
+.rectangleSvg {
+  position: absolute;
+  top: -3%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contacts {
+  text-transform: uppercase;
+  margin-bottom: -55px;
+}
+
+@media (max-width: 768px) {
+  .orangeArc {
+    height: 25%;
+    clip-path: ellipse(70% 100% at 50% 00%);
+    border-radius: 0;
+  }
+
+  .orangeArc span {
+    font-size: 0.7rem;
+    top: 6%;
+    left: 3%;
+  }
+
+  .offScreenLogo {
+    width: 150px;
+  }
+
+  .rectangleSvg {
+    top: -4%;
+    width: 35px;
+  }
+
+  .cta {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .whiteSpace {
+    padding-top: 20px;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .whiteSpace p {
+    font-size: 0.9rem;
+  }
+
+  .contacts {
+    margin-bottom: -35px;
+    margin-top: 30px;
+    font-size: 0.7rem;
+  }
+}

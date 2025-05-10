@@ -1,0 +1,155 @@
+.serviceSct {
+  padding: 150px 0 200px;
+  margin: -7% 0;
+  background-color: var(--white-orange);
+}
+
+.serviceUl li:nth-child(1) img {
+  margin-top: -20%;
+}
+
+/* ---------- ODD CONTAINERS --------------- */
+
+.serviceUl li:nth-child(odd) {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+  padding-right: 5%;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.serviceUl li:nth-child(odd) img {
+  max-height: 700px;
+  border-radius: 0 200px 200px 0;
+  object-fit: cover;
+}
+
+.serviceUl li:nth-child(odd) .imgDiv {
+  justify-content: flex-start;
+}
+
+/* ---------- EVEN CONTAINERS --------------- */
+
+.serviceUl li:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10%;
+  padding-left: 10%;
+  min-height: 100%;
+}
+
+.serviceUl li:nth-child(even) img {
+  max-height: 700px;
+  border-radius: 200px 0 0 200px;
+  object-fit: cover;
+}
+
+.serviceUl li:nth-child(even) .contentDiv {
+  padding: 5% 0;
+}
+
+.serviceUl li:nth-child(even) .imgDiv {
+  justify-content: flex-end;
+}
+
+/* ---------------------- */
+
+.serviceUl {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  position: relative;
+}
+
+.imgDiv {
+  width: 100%;
+  display: flex;
+}
+
+.contentDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+.contentDiv h2 {
+  color: black;
+  font-size: 4rem;
+  line-height: 0.8;
+  font-weight: 200;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .serviceSct {
+    margin: -15% 0;
+  }
+
+  .contentDiv {
+    gap: 30px;
+  }
+
+  .imgDiv img {
+    background-size: contain;
+  }
+
+  .serviceUl li:nth-child(even) {
+    padding-left: 5%;
+  }
+
+  .contentDiv h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .serviceSct {
+    padding: 200px 0;
+  }
+
+  .serviceUl li:nth-child(odd) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+    gap: 30px;
+  }
+  .serviceUl li:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+  }
+
+  .serviceUl li:nth-child(odd) img {
+    max-height: 500px;
+    border-radius: 150px;
+    object-fit: cover;
+  }
+  .serviceUl li:nth-child(even) img {
+    max-height: 500px;
+    border-radius: 150px;
+    object-fit: cover;
+  }
+
+  .serviceUl li:nth-child(odd) .imgDiv {
+    justify-content: center;
+  }
+  .serviceUl li:nth-child(even) .imgDiv {
+    justify-content: center;
+  }
+
+  .contentDiv {
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .contentDiv h2 {
+    font-size: 2.5rem;
+  }
+}

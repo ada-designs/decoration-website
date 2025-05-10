@@ -1,0 +1,236 @@
+.sliderSct {
+  min-height: 1500px;
+  margin-top: -25%;
+  padding-top: 35%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.sliderSct h2 {
+  text-align: center;
+  line-height: 1;
+}
+
+.sliderCont {
+  display: grid;
+  padding: 10% 0;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.sliderItem {
+  border: 1px solid white;
+  padding: 10% 2.5%;
+  border-radius: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  /* Settings for overlay effect */
+  background-size: cover;
+  position: relative;
+
+  width: 100%;
+}
+
+.sliderItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.486); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensures overlay is above the image */
+}
+
+.sliderItem h3 {
+  color: white;
+  font-size: 2rem;
+  align-self: center;
+  text-align: center;
+  line-height: 0.8;
+  font-weight: 200;
+  font-style: italic;
+  z-index: 2;
+}
+
+.sliderItem button {
+  z-index: 2;
+}
+
+/* ------ STATIC SLIDER ------------- */
+
+.staticSliderCont {
+  display: flex;
+  flex-direction: column;
+  padding: 10% 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  gap: 2rem;
+}
+
+.staticSliderItem {
+  border: 1px solid white;
+  padding: 10% 2.5%;
+  border-radius: 175px;
+  width: 70%;
+  height: 450px; /* Adjust the value as needed */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  /* Settings for overlay effect */
+  background-size: cover;
+  position: relative;
+}
+
+.staticSliderItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.486); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensures overlay is above the image */
+}
+
+.staticSliderItem h3 {
+  color: white;
+  font-size: 2rem;
+  align-self: center;
+  text-align: center;
+  line-height: 0.8;
+  font-weight: 200;
+  font-style: italic;
+  z-index: 2;
+}
+
+.staticSliderItem button {
+  z-index: 2;
+}
+
+.sliderBtns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.active {
+  background-color: red;
+  height: 650px;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.active svg {
+  cursor: pointer;
+}
+
+.left {
+  transform: translateX(-30%);
+  height: 600px;
+}
+
+.right {
+  transform: translateX(30%);
+  height: 600px;
+}
+
+.left svg,
+.right svg {
+  display: none;
+}
+
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  color: white;
+  z-index: 3;
+  font-size: 1.5rem;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  color: white;
+  z-index: 3;
+  font-size: 1.5rem;
+}
+
+/* ------------- ANIMATION -------------- */
+
+@keyframes fadeZoom {
+  0% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animateFadeZoom {
+  animation: fadeZoom 0.8s ease forwards;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+.animateSlideLeft {
+  animation: slideLeft 0.5s ease forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+
+.animateSlideRight {
+  animation: slideRight 0.5s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .sliderSct {
+    padding-bottom: 20%;
+  }
+
+  .staticSliderItem {
+    height: 400px;
+    width: 90%;
+    border-radius: 120px;
+  }
+
+  .staticSliderItem h3 {
+    font-size: 1.4rem;
+  }
+}

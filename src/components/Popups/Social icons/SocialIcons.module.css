@@ -1,0 +1,13 @@
+/* Social icons */
+
+.socialLink {
+  color: orangered;
+  font-size: 1.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

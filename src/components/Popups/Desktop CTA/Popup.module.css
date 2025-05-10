@@ -1,0 +1,119 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--orange-fade);
+  z-index: 100;
+  opacity: 0.45;
+}
+
+.closeIcon {
+  position: absolute;
+  right: 2%;
+  bottom: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row-reverse;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: orangered;
+
+  cursor: pointer;
+}
+
+.cta {
+  background-color: white;
+  z-index: 101;
+  position: fixed;
+  height: 90vh;
+  width: 80vw;
+  top: 5%;
+  left: 10%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3%;
+  border-radius: 50px;
+  gap: 150px;
+  transition: 0.5s;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 60%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  height: 100%;
+  width: 40%;
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  gap: 2rem;
+}
+
+.phoneLink1 {
+  font-size: 2rem;
+  color: orangered;
+  margin-right: 20px;
+  margin-bottom: -10px;
+}
+
+.phoneLink2 {
+  font-size: 2.2rem;
+  color: rgb(174, 0, 255);
+  margin-right: 15px;
+  margin-bottom: -10px;
+}
+
+.phoneLink3 {
+  font-size: 2.5rem;
+  color: green;
+  margin-right: 18px;
+  margin-bottom: -10px;
+}
+
+/* Social icons */
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 25%;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: orangered;
+  font-size: 1.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

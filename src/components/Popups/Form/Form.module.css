@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.form input,
+.form textarea {
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 20px;
+  padding: 2%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: gray; /* Change to your desired color */
+  font-style: italic; /* Optional: make the text italic */
+  font-size: 1rem; /* Adjust the font size */
+  text-transform: uppercase; /* Ensure placeholders are uppercase */
+}
+
+.form textarea {
+  display: flex;
+  padding: 10% 5%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .form {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .form input::placeholder,
+  .form textarea::placeholder {
+    font-size: 0.7rem;
+  }
+
+  .form button {
+    font-size: 0.8rem;
+    padding: 0.7rem 1rem;
+  }
+}

@@ -1,0 +1,111 @@
+/* Popups */
+
+.offScreenCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white-orange);
+  color: black;
+  z-index: 100;
+
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+
+  transition: 0.7s ease-in-out;
+}
+
+.orangeArc {
+  background: var(--orange-fade);
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  clip-path: ellipse(100% 100% at 50% 00%);
+}
+
+.offScreenLogo {
+  width: 200px;
+}
+
+.orangeArc span {
+  position: absolute;
+  left: 3%;
+  top: 5%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.whiteSpace {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 75px;
+  gap: 2rem;
+}
+
+.rectangleSvg {
+  position: absolute;
+  top: -1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  text-transform: uppercase;
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .orangeArc span {
+    font-size: 1.2rem;
+  }
+
+  .offScreenLogo {
+    width: 300px;
+  }
+
+  .whiteSpace {
+    padding-top: 120px;
+  }
+
+  .links {
+    font-size: 1.3rem;
+  }
+
+  .contacts {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .offScreenCont {
+    height: 120vh;
+    padding-bottom: 10%;
+  }
+
+  .orangeArc {
+    height: 33%;
+  }
+
+  .contacts {
+    margin-top: 15px;
+  }
+
+  .orangeArc span {
+    font-size: 1rem;
+    top: 6%;
+    left: 3%;
+  }
+}

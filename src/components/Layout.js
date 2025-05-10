@@ -1,69 +1,76 @@
-import useIsMobile from "@/hooks/useIsMobile";
+import { useState } from "react";
 import { useRouter } from "next/router";
+import useIsMobile from "@/hooks/useIsMobile";
+
 import DesktopHeader from "./Headers/DesktopHeader";
 import MobileHeader from "./Headers/MobileHeader";
-import MobileMenu from "./Popups/MobileMenu/MobileMenu";
-import Footer from "./Footer/Footer";
-import DesktopPopup from "./Popups/Desktop CTA/DesktopPopup";
-import MobilePopup from "./Popups/MobilePopup/MobilePopup";
-
 import SecondaryHeader from "./Headers/2DesktopHeader";
 import SecondaryMobileHeader from "./Headers/2MobileHeader";
 
-import { useState } from "react";
+import MobileMenu from "./Popups/MobileMenu/MobileMenu";
+import DesktopPopup from "./Popups/Desktop CTA/DesktopPopup";
+import MobilePopup from "./Popups/MobilePopup/MobilePopup";
+
+import Footer from "./Footer/Footer";
 
 export default function Layout({ children }) {
   const isMobile = useIsMobile();
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isCta, setIsCta] = useState(false);
 
-  /* Mobile menu popup*/
-  function handleOpenMobileMenu() {
-    setIsOpen(true);
-  }
-
-  function handleCloseMobileMenu() {
-    setIsOpen(false);
-  }
-
-  /* CTA popup */
-  function handleOpenCta() {
-    if (isOpen) setIsOpen(false);
-    setIsCta(true);
-  }
-
-  function handleCloseCta() {
-    setIsCta(false);
-  }
-
-  /* Detect a page */
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isCtaOpen, setCtaOpen] = useState(false);
 
   const isHomePage = router.pathname === "/";
   const isServicesPage = router.pathname === "/services";
 
+  const showSecondaryHeader = isServicesPage;
+  const showPrimaryHeader = !isServicesPage;
+
+  const openMobileMenu = () => setMobileMenuOpen(true);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  const openCta = () => {
+    if (isMobileMenuOpen) closeMobileMenu();
+    setCtaOpen(true);
+  };
+  const closeCta = () => setCtaOpen(false);
+
+  const renderHeader = () => {
+    if (isMobile) {
+      return showPrimaryHeader ? (
+        <MobileHeader openMobileMenu={openMobileMenu} />
+      ) : (
+        <SecondaryMobileHeader openMobileMenu={openMobileMenu} />
+      );
+    }
+
+    return showPrimaryHeader ? (
+      <DesktopHeader openCta={openCta} />
+    ) : (
+      <SecondaryHeader openCta={openCta} />
+    );
+  };
+
   return (
     <>
-      {!isMobile && !isServicesPage && <DesktopHeader openCta={handleOpenCta} />}
-
-      {isMobile && !isServicesPage && (
-        <MobileHeader openMobileMenu={handleOpenMobileMenu} />
-      )}
-
-      {!isMobile && isServicesPage && <SecondaryHeader openCta={handleOpenCta} />}
-
-      {isMobile && isServicesPage && (
-        <SecondaryMobileHeader openMobileMenu={handleOpenMobileMenu} />
-      )}
+      {renderHeader()}
 
       {isMobile && (
-        <MobileMenu isOpen={isOpen} closeMobileMenu={handleCloseMobileMenu} />
+        <>
+          <MobileMenu
+            isOpen={isMobileMenuOpen}
+            closeMobileMenu={closeMobileMenu}
+          />
+          <MobilePopup
+            isCta={isCtaOpen}
+            openCta={openCta}
+            closeCta={closeCta}
+          />
+        </>
       )}
+
       {!isMobile && (
-        <DesktopPopup isCta={isCta} openCta={handleOpenCta} closeCta={handleCloseCta} />
-      )}
-      {isMobile && (
-        <MobilePopup isCta={isCta} openCta={handleOpenCta} closeCta={handleCloseCta} />
+        <DesktopPopup isCta={isCtaOpen} openCta={openCta} closeCta={closeCta} />
       )}
 
       <main>{children}</main>

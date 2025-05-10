@@ -1,4 +1,4 @@
-import Services from "@/components/Services/ServicesSct.js";
+import ServicesView from "@/components/Services/Services.js";
 import useIsMobile from "@/hooks/useIsMobile";
 import Layout from "@/components/Layout";
 
@@ -7,7 +7,7 @@ export default function Services({ openMobileMenu }) {
   return (
     <>
       <Layout>
-        <Services />
+        <ServicesView />
       </Layout>
     </>
   );

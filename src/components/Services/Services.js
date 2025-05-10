@@ -1,4 +1,4 @@
-import styles from "./ServicesSct.module.css";
+import styles from "./Services.module.css";
 import { Service } from "./Service/Service";
 
 const services = [

@@ -3,7 +3,7 @@ import Button from "../../Button";
 import Image from "next/image";
 import styles from "./MobileMenu.module.css";
 
-import SocialIcons from "../Social icons/SocialIcons";
+import SocialIcons from "../SocialIcons/SocialIcons";
 import PhoneIcons from "../PhoneIcons/PhoneIcons";
 
 export default function MobileMenu({ isOpen, closeMobileMenu, openCta }) {

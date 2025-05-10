@@ -4,8 +4,6 @@ import useIsMobile from "@/hooks/useIsMobile";
 
 import DesktopHeader from "./Headers/DesktopHeader";
 import MobileHeader from "./Headers/MobileHeader";
-import SecondaryHeader from "./Headers/2DesktopHeader";
-import SecondaryMobileHeader from "./Headers/2MobileHeader";
 
 import MobileMenu from "./Popups/MobileMenu/MobileMenu";
 import DesktopPopup from "./Popups/Desktop CTA/DesktopPopup";
@@ -35,19 +33,13 @@ export default function Layout({ children }) {
   const closeCta = () => setCtaOpen(false);
 
   const renderHeader = () => {
+    const variant = showPrimaryHeader ? "primary" : "secondary";
+
     if (isMobile) {
-      return showPrimaryHeader ? (
-        <MobileHeader openMobileMenu={openMobileMenu} />
-      ) : (
-        <SecondaryMobileHeader openMobileMenu={openMobileMenu} />
-      );
+      return <MobileHeader openMobileMenu={openMobileMenu} variant={variant} />;
     }
 
-    return showPrimaryHeader ? (
-      <DesktopHeader openCta={openCta} />
-    ) : (
-      <SecondaryHeader openCta={openCta} />
-    );
+    return <DesktopHeader openCta={openCta} variant={variant} />;
   };
 
   return (

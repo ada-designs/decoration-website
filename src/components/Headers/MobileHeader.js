@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import PopupMobileMenu from "../Popups/Mobile Menu/PopupMobileMenu";
+import MobileMenu from "../Popups/MobileMenu/MobileMenu";
 import { useState } from "react";
 import Image from "next/image";
 

@@ -1,15 +1,12 @@
 import Link from "next/link";
 import Button from "../../Button";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import styles from "./MobileMenuPopup.module.css";
+import styles from "./MobileMenu.module.css";
 
 import SocialIcons from "../Social icons/SocialIcons";
-import PhoneIcons from "../Phone icons/PhoneIcons";
+import PhoneIcons from "../PhoneIcons/PhoneIcons";
 
-export default function PopupMobileMenu({ isOpen, closeMobileMenu, openCta }) {
+export default function MobileMenu({ isOpen, closeMobileMenu, openCta }) {
   return (
     <div
       className={styles.offScreenCont}

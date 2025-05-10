@@ -1,6 +1,6 @@
 import styles from "./MobilePopup.module.css";
 import Form from "../Form/Form";
-import PhoneIcons from "../Phone icons/PhoneIcons";
+import PhoneIcons from "../PhoneIcons/PhoneIcons";
 import Image from "next/image";
 
 export default function MobilePopup({ isCta, closeCta }) {

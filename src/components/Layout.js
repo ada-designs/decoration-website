@@ -2,10 +2,10 @@ import useIsMobile from "@/hooks/useIsMobile";
 import { useRouter } from "next/router";
 import DesktopHeader from "./Headers/DesktopHeader";
 import MobileHeader from "./Headers/MobileHeader";
-import PopupMobileMenu from "./Popups/Mobile Menu/PopupMobileMenu";
-import Footer from "./Footers/Footer";
+import MobileMenu from "./Popups/MobileMenu/MobileMenu";
+import Footer from "./Footer/Footer";
 import DesktopPopup from "./Popups/Desktop CTA/DesktopPopup";
-import MobilePopup from "./Popups/CTA mobile/MobilePopup";
+import MobilePopup from "./Popups/MobilePopup/MobilePopup";
 
 import SecondaryHeader from "./Headers/2DesktopHeader";
 import SecondaryMobileHeader from "./Headers/2MobileHeader";
@@ -57,7 +57,7 @@ export default function Layout({ children }) {
       )}
 
       {isMobile && (
-        <PopupMobileMenu isOpen={isOpen} closeMobileMenu={handleCloseMobileMenu} />
+        <MobileMenu isOpen={isOpen} closeMobileMenu={handleCloseMobileMenu} />
       )}
       {!isMobile && (
         <DesktopPopup isCta={isCta} openCta={handleOpenCta} closeCta={handleCloseCta} />

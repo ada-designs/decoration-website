@@ -1,19 +1,21 @@
-import styles from "./Header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import PopupMobileMenu from "../Popups/Mobile Menu/PopupMobileMenu";
-import { useState } from "react";
 import Image from "next/image";
+import styles from "./MobileHeader.module.css";
 
-export default function MobileHeader({ openMobileMenu }) {
+export default function MobileHeader({ openMobileMenu, variant = "primary" }) {
+  const isPrimary = variant === "primary";
+
   return (
-    <header className={styles.headerMain}>
+    <header
+      className={`${styles.header} ${
+        isPrimary ? styles.headerMain : styles.headerSecondary
+      }`}
+    >
       <Image
         src="/logo-white.png"
         alt="logo-white"
         className={styles.headerLogo}
-        width={200}
-        height={200}
+        width={150}
+        height={150}
       />
       <div className={styles.hamburger} onClick={openMobileMenu}>
         <span></span>

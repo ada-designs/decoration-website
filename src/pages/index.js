@@ -1,10 +1,10 @@
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
-import useIsTabletAndMobile from "@/hooks/useIsMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export default function Home() {
-  const isMobile = useIsTabletAndMobile();
+  const isMobile = useIsMobile();
   return (
     <Layout>
       <Hero />

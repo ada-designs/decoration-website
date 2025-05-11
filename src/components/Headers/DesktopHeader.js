@@ -1,14 +1,16 @@
-import Button from "../Button";
 import Link from "next/link";
-import styles from "./Header.module.css";
 import Image from "next/image";
+import Button from "../Button";
+import styles from "./DesktopHeader.module.css";
 
-export default function Header({ isCta, openCta }) {
+export default function Header({ openCta, variant = "primary" }) {
+  const isPrimary = variant === "primary";
+
   return (
-    <header className={styles.headerMain}>
-      <ul>
+    <header className={isPrimary ? styles.headerMain : styles.headerSecondary}>
+      <ul className={styles.navLinks}>
         <li>
-          <a href="#about">За мен</a>
+          <Link href={{ pathname: "/", hash: "about" }}>За мен</Link>
         </li>
         <li>
           <Link href="/services">Услуги</Link>
@@ -17,7 +19,8 @@ export default function Header({ isCta, openCta }) {
           <Link href="/wedding">Сватбена флористика</Link>
         </li>
       </ul>
-      <Link href={"/"} className={styles.headerLogo}>
+
+      <Link href="/" className={styles.headerLogo}>
         <Image
           src="/logo-white.png"
           alt="logo-white"
@@ -25,7 +28,11 @@ export default function Header({ isCta, openCta }) {
           height={200}
         />
       </Link>
-      <Button className="btn orange-btn" onClick={openCta}>
+
+      <Button
+        className={`btn ${isPrimary ? "orange-btn" : "transp-btn"}`}
+        onClick={openCta}
+      >
         <span>Свържи се с нас</span>
       </Button>
     </header>

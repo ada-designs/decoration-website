@@ -1,13 +1,13 @@
-import ServicesSct from "@/components/Services/ServicesSct.js";
-import useIsTabletAndMobile from "@/hooks/useIsMobile";
+import ServicesView from "@/components/Services/Services.js";
+import useIsMobile from "@/hooks/useIsMobile";
 import Layout from "@/components/Layout";
 
 export default function Services({ openMobileMenu }) {
-  const isMobile = useIsTabletAndMobile();
+  const isMobile = useIsMobile();
   return (
     <>
       <Layout>
-        <ServicesSct />
+        <ServicesView />
       </Layout>
     </>
   );

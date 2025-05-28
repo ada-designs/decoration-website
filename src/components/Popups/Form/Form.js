@@ -26,7 +26,7 @@ export default function Form() {
   return (
     <form
       className={styles.form}
-      action="https://formsubmit.co/always.blooming.eventss@gmail.com"
+      action="https://formsubmit.co/el/rufozo"
       method="POST"
     >
       <div

@@ -40,7 +40,11 @@ export default function Form() {
         {/* Captcha and redirect */}
 
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="/" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://decoration-website.vercel.app/"
+        />
 
         <input
           style={{

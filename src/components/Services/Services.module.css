@@ -1,11 +1,11 @@
 .serviceSct {
-  padding: 150px 0 200px;
-  margin: -7% 0;
+  padding: 150px 0 350px;
+  margin: -7% 0 -16%;
   background-color: var(--white-orange);
 }
 
 .serviceUl li:nth-child(1) img {
-  margin-top: -20%;
+  margin-top: -15%;
 }
 
 /* ---------- ODD CONTAINERS --------------- */
@@ -20,7 +20,7 @@
 }
 
 .serviceUl li:nth-child(odd) img {
-  max-height: 700px;
+  max-height: 600px;
   border-radius: 0 200px 200px 0;
   object-fit: cover;
 }
@@ -40,7 +40,7 @@
 }
 
 .serviceUl li:nth-child(even) img {
-  max-height: 700px;
+  max-height: 600px;
   border-radius: 200px 0 0 200px;
   object-fit: cover;
 }
@@ -72,6 +72,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  gap: 40px;
 
   width: 100%;
 }
@@ -86,7 +87,7 @@
 
 @media (max-width: 1024px) and (min-width: 768px) {
   .serviceSct {
-    margin: -15% 0;
+    margin: -10% 0;
   }
 
   .contentDiv {

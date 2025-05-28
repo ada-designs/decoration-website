@@ -35,24 +35,31 @@ export default function DesktopPopup({ isCta, closeCta }) {
           <h2>Контакти</h2>
           <ul className={styles.phones}>
             <li>
-              <Link href="#">
-                <FontAwesomeIcon icon={faPhone} className={styles.phoneLink1} />
-                + 359 897 409 384
+              <Link href="tel:+359895774249" className={styles.phoneLink1}>
+                <FontAwesomeIcon icon={faPhone} />{" "}
+                <span className={styles.phoneText}>+359895774249</span>
               </Link>
             </li>
             <li>
-              <Link href="#">
-                <FontAwesomeIcon icon={faViber} className={styles.phoneLink2} />
-                + 359 897 409 384
+              <Link
+                href="viber://chat?number=359895774249"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.phoneLink2}
+              >
+                <FontAwesomeIcon icon={faViber} />{" "}
+                <span className={styles.phoneText}>+359895774249</span>
               </Link>
             </li>
             <li>
-              <Link href="#">
-                <FontAwesomeIcon
-                  icon={faWhatsapp}
-                  className={styles.phoneLink3}
-                />
-                + 359 897 409 384
+              <Link
+                href="https://api.whatsapp.com/send?phone=359895774249&text=Здравейте! Бих искал да направя запитване."
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.phoneLink3}
+              >
+                <FontAwesomeIcon icon={faWhatsapp} />
+                <span className={styles.phoneText}>+359895774249</span>
               </Link>
             </li>
           </ul>
@@ -60,28 +67,38 @@ export default function DesktopPopup({ isCta, closeCta }) {
             <p>Последвайте ни в социалните мрежи:</p>
             <ul className={styles.socialIcons}>
               <li>
-                <Link href="#">
+                <a
+                  href="https://www.facebook.com/p/Always-Blooming-Events-61561397053103/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon
                     icon={faFacebook}
                     className={styles.socialLink}
                   />
-                </Link>
+                </a>
               </li>
+
               <li>
-                <Link href="#">
+                <a
+                  href="https://www.instagram.com/always_blooming_events_?igsh=dzRocmhxNHo3ZjJp&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon
                     icon={faInstagram}
                     className={styles.socialLink}
                   />
-                </Link>
+                </a>
               </li>
+
               <li>
-                <Link href="#">
+                <a href="mailto:always.blooming.eventss@gmail.com">
                   <FontAwesomeIcon
                     icon={faEnvelope}
                     className={styles.socialLink}
                   />
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

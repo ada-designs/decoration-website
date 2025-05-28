@@ -4,6 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer({ isMobile }) {
   return (
@@ -27,16 +28,37 @@ export default function Footer({ isMobile }) {
         </ul>
         <ul className={styles.ulRight}>
           <li>
-            <FontAwesomeIcon icon={faEnvelope} />
-            <span>awlays.blooming.events@gmail.com</span>
+            <a
+              href="mailto:always.blooming.eventss@gmail.com?subject=Запитване&body=Здравейте, искам да организирате моето събитие!"
+              style={{ display: "flex", gap: "25px", alignItems: "center" }}
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
+              <span>always.blooming.eventss@gmail.com</span>
+            </a>
           </li>
           <li>
-            <FontAwesomeIcon icon={faPhone} />
-            <span>+359 784 567 274</span>
+            <Link
+              href="tel:+359895774249"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "20px",
+              }}
+            >
+              <FontAwesomeIcon icon={faPhone} />
+              <span>+359 895 774 249</span>
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faLocationDot} />
-            <span>гр. Варна, кв. Аспарухово, ул. Флора 34</span>
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              style={{ marginRight: !isMobile ? "20px" : "" }}
+            />
+            <span>
+              гр. Варна, кв. Аспарухово, {!isMobile && <br />} ул. Народни
+              будители 2 {!isMobile && <br />} (Сити Сентър Аспарухово ет.2)
+            </span>
           </li>
         </ul>
       </div>

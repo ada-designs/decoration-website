@@ -1,6 +1,7 @@
 import Button from "../Button";
 import styles from "./Hero.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OrangeArc() {
   return (
@@ -8,19 +9,22 @@ export default function OrangeArc() {
       <div className={styles.whiteArc}>
         <div className={styles.whiteArcFirst}>
           <h1>
-            <span className="word1">Декорация</span>
+            <span className="word1">Украса</span>
             <br></br>
-            <span className="word2">на събития</span>
+            <span className="word2">за събития</span>
           </h1>
           <p>
-            Спестете време за декорация на вашето следващо събитие с помощта на
-            Always Blooming Events. Ние предлагаме украса за сватби, рождени
-            дни, юбилеи, детски рождени дни, погачи, кръщенета, корпоративни
-            събития, абитуриентски балове, момински партита, вечери на плажа и
-            др. <br></br> <br></br> Уверете се, че следващото ви събитие ще се
-            окаже точно както искате.
+            Спестете време и усилия при декорирането на вашето следващо събитие
+            с Always Blooming Events! Ние превръщаме всеки празничен ден в
+            незабравимо изживяване с уникална украса за сватби, рождени дни,
+            юбилеи, детски празненства, погачи, кръщенета, корпоративни
+            мероприятия, абитуриентски балове, момински партита, вечери на плажа
+            и много други. <br></br> <br></br> Доверете се на нас, за да бъде
+            всичко точно както искате!
           </p>
-          <Button className="btn transp-btn">Научете повече</Button>
+          <Link href="/services">
+            <Button className="btn transp-btn">Научете повече</Button>
+          </Link>
         </div>
 
         <div className={styles.whiteArcSecond} id="about">

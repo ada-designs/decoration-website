@@ -1,14 +1,10 @@
 import ServicesView from "@/components/Services/Services.js";
-import useIsMobile from "@/hooks/useIsMobile";
 import Layout from "@/components/Layout";
 
-export default function Services({ openMobileMenu }) {
-  const isMobile = useIsMobile();
+export default function ServicesPage() {
   return (
-    <>
-      <Layout>
-        <ServicesView />
-      </Layout>
-    </>
+    <Layout>
+      <ServicesView />
+    </Layout>
   );
 }

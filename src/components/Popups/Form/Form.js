@@ -19,8 +19,16 @@ export default function Form() {
     }));
   };
 
+  // const handleSubmit = (e) => {
+  //   e.target.reset();
+  // };
+
   return (
-    <form className={styles.form}>
+    <form
+      className={styles.form}
+      action="https://formsubmit.co/a.aleksandrov2021@gmail.com"
+      method="POST"
+    >
       <div
         style={{
           display: "flex",
@@ -29,12 +37,18 @@ export default function Form() {
           justifyContent: "center",
         }}
       >
+        {/* Captcha and redirect */}
+
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="/" />
+
         <input
           style={{
             width: "48%",
             textTransform: "none",
           }}
           type="text"
+          name="име"
           placeholder={placeholders.name.toUpperCase()}
           onFocus={() => handleFocus("name")}
           onBlur={() => handleBlur("name", "Име")}
@@ -46,6 +60,7 @@ export default function Form() {
             textTransform: "none",
           }}
           type="text"
+          name="фамилия"
           placeholder={placeholders.family.toUpperCase()}
           onFocus={() => handleFocus("family")}
           onBlur={() => handleBlur("family", "Фамилия")}
@@ -54,11 +69,13 @@ export default function Form() {
       </div>
       <input
         type="email"
+        name="имейл"
         placeholder="ИМЕЙЛ"
         style={{ width: "100%" }}
         required
       />
       <textarea
+        name="съобщение"
         placeholder={placeholders.question.toUpperCase()}
         style={{
           textTransform: "none",

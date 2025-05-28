@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import useIsMobile from "@/hooks/useIsMobile";
 
+import React, { isValidElement } from "react";
+
 import DesktopHeader from "./Headers/DesktopHeader";
 import MobileHeader from "./Headers/MobileHeader";
 
@@ -51,6 +53,7 @@ export default function Layout({ children }) {
           <MobileMenu
             isOpen={isMobileMenuOpen}
             closeMobileMenu={closeMobileMenu}
+            openCta={openCta}
           />
           <MobilePopup
             isCta={isCtaOpen}
@@ -64,7 +67,11 @@ export default function Layout({ children }) {
         <DesktopPopup isCta={isCtaOpen} openCta={openCta} closeCta={closeCta} />
       )}
 
-      <main>{children}</main>
+      <main>
+        {isValidElement(children)
+          ? React.cloneElement(children, { openCta })
+          : children}
+      </main>
       <Footer isMobile={isMobile} />
     </>
   );

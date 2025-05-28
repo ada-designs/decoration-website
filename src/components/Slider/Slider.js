@@ -4,50 +4,62 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+import Link from "next/link";
+
 const slides = [
   {
     id: 0,
     title: "Моминско <br> Парти",
-    link: "#",
+    link: "/services",
     backgroundImage: "./2.jpg",
   },
   {
     id: 1,
     title: "Сватбена <br> Флористика",
-    link: "#",
+    link: "/services",
     backgroundImage: "./floristika_slider.jpg",
   },
   {
     id: 2,
     title: "Юбилей/ <br> Рожден ден",
-    link: "#",
+    link: "/services",
     backgroundImage: "./1.jpg",
   },
-  { id: 3, title: "Корпоративно", link: "#", backgroundImage: "./hero.png" },
+  {
+    id: 3,
+    title: "Корпоративно",
+    link: "/services",
+    backgroundImage: "./korporativno.jpg",
+  },
   {
     id: 4,
     title: "Вечери <br> На Плажа",
-    link: "#",
+    link: "/services",
     backgroundImage: "./picnic.jpg",
   },
-  { id: 5, title: "Кръщене", link: "#", backgroundImage: "./krushtene.jpg" },
+  {
+    id: 5,
+    title: "Кръщене",
+    link: "/services",
+    backgroundImage: "./krushtene.jpg",
+  },
   {
     id: 6,
     title: "Ергенско <br> парти",
-    link: "#",
-    backgroundImage: "./1.jpg",
+    link: "/services",
+    backgroundImage: "./bachelor.jpg",
   },
   {
     id: 7,
     title: "Детски <br> рожден ден",
-    link: "#",
+    link: "/services",
     backgroundImage: "./detski.jpg",
   },
   {
     id: 8,
     title: "Абитуриентски <br> бал",
-    link: "#",
-    backgroundImage: "./1.jpg",
+    link: "/services",
+    backgroundImage: "./prom_slider.jpg",
   },
 ];
 
@@ -164,7 +176,9 @@ function SliderItem({
         className={styles.rightArrow}
         onClick={changeActiveRight}
       />
-      <Button className="btn transp-btn">Научи повече</Button>
+      <Link href="/services" className="btn transp-btn">
+        Научи повече
+      </Link>
     </li>
   );
 }
@@ -176,7 +190,9 @@ function StaticSliderItem({ title, backgroundImage }) {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <h3 dangerouslySetInnerHTML={{ __html: title }} />
-      <Button className="btn transp-btn">Научи повече</Button>
+      <Link href="/services" className="btn transp-btn">
+        Научи повече
+      </Link>
     </li>
   );
 }

@@ -9,17 +9,27 @@ export default function PhoneIcons({ className }) {
   return (
     <ul className={styles.phones}>
       <li>
-        <Link href="#" className={styles.phoneLink1}>
+        <Link href="tel:+359895774249" className={styles.phoneLink1}>
           <FontAwesomeIcon icon={faPhone} />
         </Link>
       </li>
       <li>
-        <Link href="#" className={styles.phoneLink2}>
+        <Link
+          href="viber://chat?number=359895774249"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.phoneLink2}
+        >
           <FontAwesomeIcon icon={faViber} />
         </Link>
       </li>
       <li>
-        <Link href="#" className={styles.phoneLink3}>
+        <Link
+          href="https://api.whatsapp.com/send?phone=359895774249&text=Здравейте! Бих искал да направя запитване."
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.phoneLink3}
+        >
           <FontAwesomeIcon icon={faWhatsapp} />
         </Link>
       </li>

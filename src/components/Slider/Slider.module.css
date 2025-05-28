@@ -228,6 +228,7 @@
     height: 400px;
     width: 90%;
     border-radius: 120px;
+    background-position: 0 -60px;
   }
 
   .staticSliderItem h3 {

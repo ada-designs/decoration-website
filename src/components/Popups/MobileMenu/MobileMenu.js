@@ -62,7 +62,7 @@ export default function MobileMenu({ isOpen, closeMobileMenu, openCta }) {
 
       <ul className={styles.links}>
         <li className={styles.contacts}>
-          <Link href="/services">Контакти</Link>
+          <Link href="">Контакти</Link>
         </li>
       </ul>
 

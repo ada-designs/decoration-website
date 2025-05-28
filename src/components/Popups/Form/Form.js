@@ -25,7 +25,18 @@ export default function Form() {
 
   return (
     <form
-      className={styles.form}
+      onSubmit={(e) => {
+        e.preventDefault(); // спира презареждането
+        const form = e.target;
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+        }).then(() => {
+          alert("Благодарим ти за съобщението! 💌");
+          form.reset();
+        });
+      }}
       action="https://formsubmit.co/el/rufozo"
       method="POST"
     >

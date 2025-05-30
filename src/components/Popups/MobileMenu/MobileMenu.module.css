@@ -91,12 +91,16 @@
 
 @media (max-width: 767px) {
   .offScreenCont {
-    height: 120vh;
+    height: 100vh;
     padding-bottom: 10%;
   }
 
   .orangeArc {
-    height: 33%;
+    height: 25%;
+  }
+
+  .orangeArc img {
+    width: 150px;
   }
 
   .contacts {

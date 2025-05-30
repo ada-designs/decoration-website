@@ -22,18 +22,21 @@
 }
 
 @media (max-width: 768px) {
+  .phones {
+    margin-bottom: 15px;
+  }
   .phoneLink1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: orangered;
   }
 
   .phoneLink2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: rgb(174, 0, 255);
   }
 
   .phoneLink3 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: green;
   }
 }

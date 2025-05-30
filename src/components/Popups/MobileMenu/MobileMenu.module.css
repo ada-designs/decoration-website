@@ -91,7 +91,7 @@
 
 @media (max-width: 767px) {
   .offScreenCont {
-    height: 100vh;
+    height: 120vh;
     padding-bottom: 10%;
   }
 

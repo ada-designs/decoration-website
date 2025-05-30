@@ -1,7 +1,8 @@
 import { useState } from "react";
-import styles from "./Form.module.css";
+import styles from "./Form.module.css"; // смени с твоя CSS файл
 
 export default function Form() {
+  const [thankYou, setThankYou] = useState(false);
   const [placeholders, setPlaceholders] = useState({
     name: "Име",
     family: "Фамилия",
@@ -12,33 +13,42 @@ export default function Form() {
     setPlaceholders((prev) => ({ ...prev, [field]: "" }));
   };
 
-  const handleBlur = (field, defaultText) => {
+  const handleBlur = (field, defaultValue) => {
     setPlaceholders((prev) => ({
       ...prev,
-      [field]: prev[field] === "" ? defaultText : prev[field],
+      [field]: prev[field] === "" ? defaultValue : prev[field],
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.target.reset();
-  // };
-
-  return (
+  return !thankYou ? (
     <form
-      onSubmit={(e) => {
-        e.preventDefault(); // спира презареждането
+      className={styles.form}
+      action="https://usebasin.com/f/6ee0e9d43c69"
+      method="POST"
+      onSubmit={async (e) => {
+        e.preventDefault();
         const form = e.target;
 
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-        }).then(() => {
-          alert("Благодарим ти за съобщението! 💌");
-          form.reset();
-        });
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (response.ok) {
+            setThankYou(true);
+            form.reset();
+          } else {
+            alert("Нещо се обърка.");
+          }
+        } catch (error) {
+          alert("Грешка при изпращане.");
+          console.error(error);
+        }
       }}
-      action="https://formsubmit.co/el/rufozo"
-      method="POST"
     >
       <div
         style={{
@@ -48,40 +58,26 @@ export default function Form() {
           justifyContent: "center",
         }}
       >
-        {/* Captcha and redirect */}
-
-        <input type="hidden" name="_captcha" value="false" />
         <input
-          type="hidden"
-          name="_next"
-          value="https://decoration-website.vercel.app/"
-        />
-
-        <input
-          style={{
-            width: "48%",
-            textTransform: "none",
-          }}
+          style={{ width: "48%", textTransform: "none" }}
           type="text"
           name="име"
-          placeholder={placeholders.name.toUpperCase()}
+          placeholder={placeholders.name}
           onFocus={() => handleFocus("name")}
           onBlur={() => handleBlur("name", "Име")}
           required
         />
         <input
-          style={{
-            width: "48%",
-            textTransform: "none",
-          }}
+          style={{ width: "48%", textTransform: "none" }}
           type="text"
           name="фамилия"
-          placeholder={placeholders.family.toUpperCase()}
+          placeholder={placeholders.family}
           onFocus={() => handleFocus("family")}
           onBlur={() => handleBlur("family", "Фамилия")}
           required
         />
       </div>
+
       <input
         type="email"
         name="имейл"
@@ -89,13 +85,11 @@ export default function Form() {
         style={{ width: "100%" }}
         required
       />
+
       <textarea
         name="съобщение"
-        placeholder={placeholders.question.toUpperCase()}
-        style={{
-          textTransform: "none",
-          textAlign: "center",
-        }}
+        placeholder={placeholders.question}
+        style={{ textTransform: "none", textAlign: "center" }}
         onFocus={(e) => {
           e.target.style.textAlign = "left";
           handleFocus("question");
@@ -107,6 +101,7 @@ export default function Form() {
         maxLength="300"
         required
       ></textarea>
+
       <button
         type="submit"
         className="btn orange-btn"
@@ -115,5 +110,12 @@ export default function Form() {
         Изпрати
       </button>
     </form>
+  ) : (
+    <h4 className={styles.thankYouMessage}>
+      <b>
+        Благодаря ви за съобщението! <br />
+        Ще се свържа с вас скоро!
+      </b>
+    </h4>
   );
 }

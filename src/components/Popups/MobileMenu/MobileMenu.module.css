@@ -11,7 +11,8 @@
   position: fixed;
   right: 0;
   top: 0;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100vw;
 
   transition: 0.7s ease-in-out;
@@ -91,7 +92,6 @@
 
 @media (max-width: 767px) {
   .offScreenCont {
-    height: 120vh;
     padding-bottom: 10%;
   }
 
